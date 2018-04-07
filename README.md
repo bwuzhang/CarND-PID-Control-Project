@@ -1,7 +1,22 @@
+
+
 # CarND-Controls-PID
 Self-Driving Car Engineer Nanodegree Program
 
 ---
+## Understand P, I, D values
+
+* P
+  * This reflects how much the system is away from the desired state. This has linear contribution to the control output. This should also be the main source of error in the control output.
+* D
+  * This reflects how fast the system state is changing away from the desired state. Large D value allows fast reaction to the environment.
+* I
+  * This reflects the error cause by noise or sensor or actuator.
+
+## Choose P, I, D values
+
+
+First I set I to 0 because there's no error in the measurement of the car from the center of the lane. Then I choose a reasonable P value, around 0.2 as the starting point. D value is gradually added to check the performance. I ended up 4 as D value, and adjust the P value to 0.3.
 
 ## Dependencies
 
@@ -19,7 +34,7 @@ Self-Driving Car Engineer Nanodegree Program
   * Run either `./install-mac.sh` or `./install-ubuntu.sh`.
   * If you install from source, checkout to commit `e94b6e1`, i.e.
     ```
-    git clone https://github.com/uWebSockets/uWebSockets 
+    git clone https://github.com/uWebSockets/uWebSockets
     cd uWebSockets
     git checkout e94b6e1
     ```
@@ -33,7 +48,7 @@ There's an experimental patch for windows in this [PR](https://github.com/udacit
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
-4. Run it: `./pid`. 
+4. Run it: `./pid`.
 
 Tips for setting up your environment can be found [here](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/0949fca6-b379-42af-a919-ee50aa304e6a/lessons/f758c44c-5e40-4e01-93b5-1a82aa4e044f/concepts/23d376c7-0195-4276-bdf0-e02f1f3c665d)
 
@@ -95,4 +110,3 @@ still be compilable with cmake and make./
 
 ## How to write a README
 A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
-
